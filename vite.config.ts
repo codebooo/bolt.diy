@@ -73,6 +73,12 @@ const gitInfo = getGitInfo();
 
 export default defineConfig((config) => {
   return {
+    // ADD THIS SERVER CONFIGURATION
+    server: {
+      host: '0.0.0.0',
+      port: process.env.PORT ? parseInt(process.env.PORT) : 3000,
+      allowedHosts: process.env.NODE_ENV === 'production' ? 'all' : ['localhost', '.up.railway.app']
+    },
     define: {
       __COMMIT_HASH: JSON.stringify(gitInfo.commitHash),
       __GIT_BRANCH: JSON.stringify(gitInfo.branch),
