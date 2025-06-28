@@ -1,4 +1,11 @@
 {
+  "scripts": {
+    "build": "remix build",
+    "start": "remix-serve build/index.js",
+    "dev": "remix vite:dev --host"
+  }
+}
+{
   "name": "bolt",
   "description": "An AI Agent",
   "private": true,
